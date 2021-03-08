@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>recsys.experiments API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-190294593-1', 'auto'); ga('send', 'pageview');
+</script><script async src='https://www.google-analytics.com/analytics.js'></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>recsys.experiments</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/experiments.py#L0-L219" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">import itertools
+import logging
+from typing import List, Tuple
+
+import pandas as pd
+from tqdm.notebook import tqdm
+
+from recsys import config
+from recsys.dataset import build_dataset, get_training_set_from_dataset, \
+    get_test_set_from_dataset, set_future_features, get_submission_set_from_dataset
+from recsys.dataset_loader import get_dataset_and_dataloader, batches_to_device
+from recsys.encoders import DatasetEncoder
+from recsys.model import BookingNet
+from recsys.model_train import train_model_for_folds
+from recsys.paths import get_model_ckpt_paths, get_path
+from recsys.types import *
+from recsys.utils import get_distribution_by_pos, get_submission, accuracy_at_k, print_gpu_usage
+from recsys.utils import get_ground_truth_from_dataset, get_trained_models
+
+
+def run_experiments(base_configuration: Dict,
+                    experiments: List[Dict],
+                    n_models: int,
+                    dataset_batches: List[BatchType],
+                    train_set: pd.DataFrame,
+                    skip_checkpoint=False) -&gt; None:
+    &#34;&#34;&#34;
+    Given a base configuration in a dictionary, run experiments
+    by overriding parameters of this base configuration with
+    a list of overrides in `experiments`.
+    &#34;&#34;&#34;
+    for model_overrides in tqdm(experiments):
+        logging.info(model_overrides)
+        model_configuration = dict(base_configuration, **model_overrides)
+        train_model_for_folds(dataset_batches,
+                              train_set,
+                              model_configuration,
+                              n_models=n_models,
+                              skip_checkpoint=skip_checkpoint)
+
+
+def get_base_configuration():
+    &#34;&#34;&#34;
+    The base configuration describes our best model. Experiments
+    change elements of this configuration to try to find an even
+    better one.
+    &#34;&#34;&#34;
+    return {
+        &#39;features_embedding&#39;: config.FEATURES_EMBEDDING,
+        &#39;hidden_size&#39;: int(config.EMBEDDING_SIZES[&#39;city_id&#39;][1]),
+        &#39;output_size&#39;: int(config.EMBEDDING_SIZES[&#39;city_id&#39;][0]),
+        &#39;embedding_sizes&#39;: config.EMBEDDING_SIZES,
+        &#39;n_layers&#39;: 2,
+        &#39;dropout&#39;: 0.3,
+        &#39;rnn_dropout&#39;: 0.1,
+        &#39;tie_embedding_and_projection&#39;: True,
+        &#39;model_type&#39;: ModelType.MANY_TO_MANY,
+        &#39;recurrent_type&#39;: RecurrentType.GRU,
+        &#39;weight_type&#39;: WeightType.UNWEIGHTED,
+        &#39;feature_projection_type&#39;: FeatureProjectionType.CONCATENATION,
+        &#39;num_folds&#39;: config.N_SPLITS,
+        &#39;batch_size&#39;: config.BATCH_SIZE
+    }
+
+
+def get_experiments() -&gt; List:
+    &#34;&#34;&#34;
+    An experiment is a dict that describes the parameters
+    that will be overridden in the base configuration
+    during an experiment.
+    &#34;&#34;&#34;
+    params = [&#39;model_type&#39;, &#39;weight_type&#39;, &#39;recurrent_type&#39;, &#39;tie_embedding_and_projection&#39;]
+    return [
+        dict(zip(params, p))
+        for p in itertools.product(
+            *map(list, [ModelType, WeightType, RecurrentType, [True, False]])
+        )
+    ]
+
+
+def get_model_performance_data(test_set: pd.DataFrame,
+                               dataset_encoder: DatasetEncoder,
+                               model_hashes: List[str] = None) -&gt; Tuple[pd.DataFrame, Dict]:
+    &#34;&#34;&#34;
+    Get model performance data from all trained models.
+    &#34;&#34;&#34;
+    booking_dataset_test, dataset_loader_test = get_dataset_and_dataloader(
+        df=test_set,
+        features=config.FEATURES_EMBEDDING
+    )
+    ground_truth_test = get_ground_truth_from_dataset(
+        df=test_set,
+        booking_dataset=booking_dataset_test,
+        dataset_encoder=dataset_encoder
+    )
+
+    trained_models = get_trained_models()
+
+    if model_hashes:
+        trained_models = {h: trained_models[h] for h in model_hashes}
+
+    df_rows = []
+    accuracy_at_4_by_length = {}
+    for model_hash, model_parameters in trained_models.items():
+        try:
+            ckpt_list = get_model_ckpt_paths(model_hash=model_hash,
+                                             checkpoint_type=&#39;accuracy_at_k&#39;)
+        except FileNotFoundError:
+            continue
+
+        d = {
+            &#39;single&#39;: ckpt_list[:1],
+            &#39;ensemble&#39;: ckpt_list
+        }
+
+        for model_type, ckpt_list in d.items():
+            if model_type == &#39;ensemble&#39; and len(ckpt_list) == 1:
+                continue
+
+            model = BookingNet(**model_parameters).to(config.DEVICE)
+            predictions = get_submission(booking_dataset_test,
+                                         dataset_loader_test,
+                                         model,
+                                         ckpt_list,
+                                         dataset_encoder)
+            accuracy = accuracy_at_k(predictions, ground_truth_test)
+            model_parameters[&#39;num_models&#39;] = len(ckpt_list)
+            model_parameters[&#39;accuracy@1&#39;] = accuracy[&#39;accuracy@1&#39;]
+            model_parameters[&#39;accuracy@4&#39;] = accuracy[&#39;accuracy@4&#39;]
+            model_parameters[&#39;accuracy@10&#39;] = accuracy[&#39;accuracy@10&#39;]
+            model_parameters[&#39;hash&#39;] = model_hash
+            df = pd.DataFrame.from_dict(model_parameters, orient=&#39;index&#39;).T
+            df_rows.append(pd.concat(
+                [df, pd.DataFrame.from_dict(accuracy[&#39;accuracy@4_by_pos&#39;], orient=&#39;index&#39;).T]
+                , axis=1))
+            accuracy_at_4_by_length[(model_hash, model_type)] = accuracy[&#39;accuracy@4_by_pos&#39;]
+    return pd.concat(df_rows), accuracy_at_4_by_length
+
+
+def filter_results_table(results: pd.DataFrame) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Filter results table to get only attributes that change between models.
+    &#34;&#34;&#34;
+    columns = [&#39;model_type&#39;, &#39;recurrent_type&#39;, &#39;tie_embedding_and_projection&#39;,
+               &#39;weight_type&#39;, &#39;accuracy@1&#39;, &#39;accuracy@4&#39;, &#39;accuracy@10&#39;, &#39;hash&#39;]
+    selected_columns = [col for col in results.columns.values
+                        if results[col].apply(str).nunique() &gt; 1
+                        or col in columns]
+    filtered_results = (results[selected_columns]
+                        .sort_values(&#34;accuracy@4&#34;, ascending=False))
+
+    decode = {
+        &#39;model_type&#39;: ModelType,
+        &#39;weight_type&#39;: WeightType,
+        &#39;recurrent_type&#39;: RecurrentType
+    }
+
+    for key, enum_type in decode.items():
+        filtered_results[key] = (filtered_results[key]
+                                 .apply(enum_type)
+                                 .apply(lambda s: str(s).split(&#39;.&#39;)[1]))
+
+    df_table = filtered_results[columns].sort_values(
+        [&#34;model_type&#34;, &#34;recurrent_type&#34;, &#34;tie_embedding_and_projection&#34;, &#34;accuracy@4&#34;],
+        ascending=[True, True, False, False])
+    return df_table
+
+
+if __name__ == &#34;__main__&#34;:
+    # build and encode dataset
+    dataset = build_dataset(reserved_obs=30000)
+    de = DatasetEncoder(config.FEATURES_TO_ENCODE)
+    de.fit_transform(dataset)
+    set_future_features(dataset)
+
+    submission_set = get_submission_set_from_dataset(dataset)
+
+    # keep only observations before the last visit
+    dataset = dataset[~dataset.next_city_id.isna()]
+
+    # split training and test set from dataset
+    train_set = get_training_set_from_dataset(dataset)
+    test_set = get_test_set_from_dataset(dataset)
+
+    logging.info(f&#34;Training set: {train_set.shape}&#34;)
+    logging.info(f&#34;Test set: {test_set.shape}&#34;)
+    logging.info(f&#34;Dataset: {dataset.shape}&#34;)
+
+    logging.info(get_distribution_by_pos(dataset=dataset,
+                                         train_set=train_set[train_set.train == 1],
+                                         test_set=test_set,
+                                         submission=submission_set).head(10))
+
+    _, dataset_loader = get_dataset_and_dataloader(
+        train_set,
+        features=config.FEATURES_EMBEDDING + [&#39;next_city_id&#39;],
+        batch_size=config.BATCH_SIZE
+    )
+    dataset_batches_cuda = batches_to_device(dataset_loader)
+
+    print_gpu_usage(0)
+
+    # run experiments from base configuration
+    base_configuration = get_base_configuration()
+    experiments = get_experiments()
+    run_experiments(base_configuration=base_configuration,
+                    experiments=experiments,
+                    n_models=1,
+                    dataset_batches=dataset_batches_cuda,
+                    train_set=train_set)
+
+    # get and save results table
+    results, _ = get_model_performance_data(test_set, de)
+
+    filter_results_table(results).to_csv(
+        get_path(
+            filename=&#39;experiments&#39;,
+            format=&#39;csv&#39;),
+        index=False
+    )</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="recsys.experiments.filter_results_table"><code class="name flex">
+<span>def <span class="ident">filter_results_table</span></span>(<span>results: pandas.core.frame.DataFrame) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Filter results table to get only attributes that change between models.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/experiments.py#L140-L166" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def filter_results_table(results: pd.DataFrame) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Filter results table to get only attributes that change between models.
+    &#34;&#34;&#34;
+    columns = [&#39;model_type&#39;, &#39;recurrent_type&#39;, &#39;tie_embedding_and_projection&#39;,
+               &#39;weight_type&#39;, &#39;accuracy@1&#39;, &#39;accuracy@4&#39;, &#39;accuracy@10&#39;, &#39;hash&#39;]
+    selected_columns = [col for col in results.columns.values
+                        if results[col].apply(str).nunique() &gt; 1
+                        or col in columns]
+    filtered_results = (results[selected_columns]
+                        .sort_values(&#34;accuracy@4&#34;, ascending=False))
+
+    decode = {
+        &#39;model_type&#39;: ModelType,
+        &#39;weight_type&#39;: WeightType,
+        &#39;recurrent_type&#39;: RecurrentType
+    }
+
+    for key, enum_type in decode.items():
+        filtered_results[key] = (filtered_results[key]
+                                 .apply(enum_type)
+                                 .apply(lambda s: str(s).split(&#39;.&#39;)[1]))
+
+    df_table = filtered_results[columns].sort_values(
+        [&#34;model_type&#34;, &#34;recurrent_type&#34;, &#34;tie_embedding_and_projection&#34;, &#34;accuracy@4&#34;],
+        ascending=[True, True, False, False])
+    return df_table</code></pre>
+</details>
+</dd>
+<dt id="recsys.experiments.get_base_configuration"><code class="name flex">
+<span>def <span class="ident">get_base_configuration</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The base configuration describes our best model. Experiments
+change elements of this configuration to try to find an even
+better one.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/experiments.py#L42-L63" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def get_base_configuration():
+    &#34;&#34;&#34;
+    The base configuration describes our best model. Experiments
+    change elements of this configuration to try to find an even
+    better one.
+    &#34;&#34;&#34;
+    return {
+        &#39;features_embedding&#39;: config.FEATURES_EMBEDDING,
+        &#39;hidden_size&#39;: int(config.EMBEDDING_SIZES[&#39;city_id&#39;][1]),
+        &#39;output_size&#39;: int(config.EMBEDDING_SIZES[&#39;city_id&#39;][0]),
+        &#39;embedding_sizes&#39;: config.EMBEDDING_SIZES,
+        &#39;n_layers&#39;: 2,
+        &#39;dropout&#39;: 0.3,
+        &#39;rnn_dropout&#39;: 0.1,
+        &#39;tie_embedding_and_projection&#39;: True,
+        &#39;model_type&#39;: ModelType.MANY_TO_MANY,
+        &#39;recurrent_type&#39;: RecurrentType.GRU,
+        &#39;weight_type&#39;: WeightType.UNWEIGHTED,
+        &#39;feature_projection_type&#39;: FeatureProjectionType.CONCATENATION,
+        &#39;num_folds&#39;: config.N_SPLITS,
+        &#39;batch_size&#39;: config.BATCH_SIZE
+    }</code></pre>
+</details>
+</dd>
+<dt id="recsys.experiments.get_experiments"><code class="name flex">
+<span>def <span class="ident">get_experiments</span></span>(<span>) ‑> List</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An experiment is a dict that describes the parameters
+that will be overridden in the base configuration
+during an experiment.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/experiments.py#L66-L78" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def get_experiments() -&gt; List:
+    &#34;&#34;&#34;
+    An experiment is a dict that describes the parameters
+    that will be overridden in the base configuration
+    during an experiment.
+    &#34;&#34;&#34;
+    params = [&#39;model_type&#39;, &#39;weight_type&#39;, &#39;recurrent_type&#39;, &#39;tie_embedding_and_projection&#39;]
+    return [
+        dict(zip(params, p))
+        for p in itertools.product(
+            *map(list, [ModelType, WeightType, RecurrentType, [True, False]])
+        )
+    ]</code></pre>
+</details>
+</dd>
+<dt id="recsys.experiments.get_model_performance_data"><code class="name flex">
+<span>def <span class="ident">get_model_performance_data</span></span>(<span>test_set: pandas.core.frame.DataFrame, dataset_encoder: <a title="recsys.encoders.DatasetEncoder" href="encoders.html#recsys.encoders.DatasetEncoder">DatasetEncoder</a>, model_hashes: List[str] = None) ‑> Tuple[pandas.core.frame.DataFrame, Dict]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get model performance data from all trained models.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/experiments.py#L81-L137" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def get_model_performance_data(test_set: pd.DataFrame,
+                               dataset_encoder: DatasetEncoder,
+                               model_hashes: List[str] = None) -&gt; Tuple[pd.DataFrame, Dict]:
+    &#34;&#34;&#34;
+    Get model performance data from all trained models.
+    &#34;&#34;&#34;
+    booking_dataset_test, dataset_loader_test = get_dataset_and_dataloader(
+        df=test_set,
+        features=config.FEATURES_EMBEDDING
+    )
+    ground_truth_test = get_ground_truth_from_dataset(
+        df=test_set,
+        booking_dataset=booking_dataset_test,
+        dataset_encoder=dataset_encoder
+    )
+
+    trained_models = get_trained_models()
+
+    if model_hashes:
+        trained_models = {h: trained_models[h] for h in model_hashes}
+
+    df_rows = []
+    accuracy_at_4_by_length = {}
+    for model_hash, model_parameters in trained_models.items():
+        try:
+            ckpt_list = get_model_ckpt_paths(model_hash=model_hash,
+                                             checkpoint_type=&#39;accuracy_at_k&#39;)
+        except FileNotFoundError:
+            continue
+
+        d = {
+            &#39;single&#39;: ckpt_list[:1],
+            &#39;ensemble&#39;: ckpt_list
+        }
+
+        for model_type, ckpt_list in d.items():
+            if model_type == &#39;ensemble&#39; and len(ckpt_list) == 1:
+                continue
+
+            model = BookingNet(**model_parameters).to(config.DEVICE)
+            predictions = get_submission(booking_dataset_test,
+                                         dataset_loader_test,
+                                         model,
+                                         ckpt_list,
+                                         dataset_encoder)
+            accuracy = accuracy_at_k(predictions, ground_truth_test)
+            model_parameters[&#39;num_models&#39;] = len(ckpt_list)
+            model_parameters[&#39;accuracy@1&#39;] = accuracy[&#39;accuracy@1&#39;]
+            model_parameters[&#39;accuracy@4&#39;] = accuracy[&#39;accuracy@4&#39;]
+            model_parameters[&#39;accuracy@10&#39;] = accuracy[&#39;accuracy@10&#39;]
+            model_parameters[&#39;hash&#39;] = model_hash
+            df = pd.DataFrame.from_dict(model_parameters, orient=&#39;index&#39;).T
+            df_rows.append(pd.concat(
+                [df, pd.DataFrame.from_dict(accuracy[&#39;accuracy@4_by_pos&#39;], orient=&#39;index&#39;).T]
+                , axis=1))
+            accuracy_at_4_by_length[(model_hash, model_type)] = accuracy[&#39;accuracy@4_by_pos&#39;]
+    return pd.concat(df_rows), accuracy_at_4_by_length</code></pre>
+</details>
+</dd>
+<dt id="recsys.experiments.run_experiments"><code class="name flex">
+<span>def <span class="ident">run_experiments</span></span>(<span>base_configuration: Dict, experiments: List[Dict], n_models: int, dataset_batches: List[Dict[str, torch.Tensor]], train_set: pandas.core.frame.DataFrame, skip_checkpoint=False) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Given a base configuration in a dictionary, run experiments
+by overriding parameters of this base configuration with
+a list of overrides in <code>experiments</code>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/experiments.py#L21-L39" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def run_experiments(base_configuration: Dict,
+                    experiments: List[Dict],
+                    n_models: int,
+                    dataset_batches: List[BatchType],
+                    train_set: pd.DataFrame,
+                    skip_checkpoint=False) -&gt; None:
+    &#34;&#34;&#34;
+    Given a base configuration in a dictionary, run experiments
+    by overriding parameters of this base configuration with
+    a list of overrides in `experiments`.
+    &#34;&#34;&#34;
+    for model_overrides in tqdm(experiments):
+        logging.info(model_overrides)
+        model_configuration = dict(base_configuration, **model_overrides)
+        train_model_for_folds(dataset_batches,
+                              train_set,
+                              model_configuration,
+                              n_models=n_models,
+                              skip_checkpoint=skip_checkpoint)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="recsys" href="index.html">recsys</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="recsys.experiments.filter_results_table" href="#recsys.experiments.filter_results_table">filter_results_table</a></code></li>
+<li><code><a title="recsys.experiments.get_base_configuration" href="#recsys.experiments.get_base_configuration">get_base_configuration</a></code></li>
+<li><code><a title="recsys.experiments.get_experiments" href="#recsys.experiments.get_experiments">get_experiments</a></code></li>
+<li><code><a title="recsys.experiments.get_model_performance_data" href="#recsys.experiments.get_model_performance_data">get_model_performance_data</a></code></li>
+<li><code><a title="recsys.experiments.run_experiments" href="#recsys.experiments.run_experiments">run_experiments</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

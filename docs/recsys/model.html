@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>recsys.model API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-190294593-1', 'auto'); ga('send', 'pageview');
+</script><script async src='https://www.google-analytics.com/analytics.js'></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>recsys.model</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/model.py#L0-L297" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">import functools
+import hashlib
+import inspect
+import json
+import logging
+from typing import List, Dict, Tuple, Iterator
+
+import numpy as np
+import pandas as pd
+import torch
+import torch.nn as nn
+from torch.utils.data import DataLoader
+
+from recsys import config
+from recsys.config import DEVICE
+from recsys.types import ModelType, WeightType, OptimizerType, BatchType, RecurrentType, FeatureProjectionType
+
+
+class BookingNet(nn.Module):
+    &#34;&#34;&#34;
+    BookingNet Sequence Aware Recommender System Network
+    &#34;&#34;&#34;
+
+    def __init__(self,
+                 features_embedding: List[str],
+                 hidden_size: int,
+                 output_size: int,
+                 embedding_sizes: Dict[str, Tuple[int, int]],
+                 n_layers: int = 2,
+                 dropout: float = 0.3,
+                 rnn_dropout: float = 0.1,
+                 tie_embedding_and_projection: bool = True,
+                 model_type: ModelType = ModelType.MANY_TO_MANY,
+                 recurrent_type: RecurrentType = RecurrentType.GRU,
+                 weight_type: WeightType = WeightType.UNWEIGHTED,
+                 feature_projection_type: FeatureProjectionType = FeatureProjectionType.CONCATENATION,
+                 **kwargs: List):
+        &#34;&#34;&#34;
+        Args:
+             features_embedding: Features to embed at each time step.
+             hidden_size: Hidden size of the recurrent encoder (`LSTM` or `GRU`).
+             output_size: Quantity of cities to predict.
+             embedding_sizes: Sizes of each feature embedding.
+             n_layers: Number of recurrent layers.
+             dropout: Dropout used in our input layer.
+             rnn_dropout: Dropout used in recurrent layer.
+             recurrent_type: Select between `RecurrentType.GRU` or `RecurrentType.LSTM`
+             tie_embedding_and_projection: If `true`, parameterize last linear layer with embedding matrix.
+             feature_projection_type: Select between `FeatureCombinationType.CONCATENATION`
+                or `FeatureCombinationType.MULTIPLICATION`
+             model_type: The model can either only predict the last city (`ModelType.MANY_TO_ONE`) or
+                predict every city in the sequence (`ModelType.MANY_TO_MANY`)
+             weight_type:
+                1. `WeightType.UNWEIGHTED`: Unweighted cross entropy.
+                2. `WeightType.UNIFORM`: Uniform cross entropy.
+                3. `WeightType.CUMSUM_CORRECTED`: Cross entropy corrected to reflect original
+                    one to many weighting.
+        &#34;&#34;&#34;
+        super().__init__()
+        # save model arguments to re-initialize later
+        model_params = inspect.getargvalues(inspect.currentframe()).locals
+        if &#39;kwargs&#39; in model_params:
+            model_params.update(model_params[&#39;kwargs&#39;])
+            model_params.pop(&#39;kwargs&#39;)
+        model_params.pop(&#39;__class__&#39;)
+        model_params.pop(&#39;self&#39;)
+        self.model_params = model_params
+
+        self.features_embedding = features_embedding
+        self.hidden_size = hidden_size
+        self.target_variable = &#34;next_city_id&#34;
+        self.embedding_layers = nn.ModuleDict(
+            {key: nn.Embedding(num_embeddings=int(qty_embeddings) + 1,  # reserve 0 index for padding/OOV.
+                               embedding_dim=int(size_embeddings),
+                               max_norm=None,  # Failed experiment, enforcing spherical embeddings degraded performance.
+                               norm_type=2,
+                               padding_idx=0)
+             for key, (qty_embeddings, size_embeddings) in embedding_sizes.items()})
+
+        # encode every variable with the prefix `next_` to the embedding matrix of the suffix.
+        self.features_dim = int(np.sum([embedding_sizes[k.replace(&#34;next_&#34;, &#34;&#34;)][1]
+                                        for k in self.features_embedding]))
+        self.city_embedding_size = embedding_sizes[&#39;city_id&#39;][1]
+
+        self.feature_combination_type = feature_projection_type
+        self.tie_embedding_and_projection = tie_embedding_and_projection
+        self.recurrent_encoder = self.get_recurrent_encoder(recurrent_type, n_layers, rnn_dropout)
+
+        if feature_projection_type == FeatureProjectionType.MULTIPLICATION:
+            self.attn_weights = nn.ParameterDict(
+                {key: nn.Parameter(torch.rand(1)) for key in self.features_embedding}
+            )
+
+        if self.city_embedding_size != self.hidden_size:
+            logging.info(
+                f&#34;Warning: Using linear layer to reconcile output of size &#34;
+                f&#34;{self.hidden_size} with city embedding of size {self.city_embedding_size}.&#34;)
+            self.linear_to_city = nn.Linear(self.hidden_size,
+                                            self.city_embedding_size,
+                                            bias=False)
+
+        self.dropout = nn.Dropout(dropout)
+        self.dense = nn.Linear(self.city_embedding_size, output_size, bias=False)
+
+        if self.tie_embedding_and_projection:
+            # ignore first embedding, since it corresponds to padding/OOV
+            self.dense.weight = nn.Parameter(self.embedding_layers[&#39;city_id&#39;].weight[1:])
+
+        # self.initialize_parameters()
+
+        # other parameters
+        self.loss = nn.CrossEntropyLoss(ignore_index=-1, reduction=&#39;none&#39;)
+        self.model_type = model_type
+        self.weight_type = weight_type
+        self.optimizer = None
+        self.cross_entropy_weights = None
+
+    def forward(self, batch: BatchType, seq_length: torch.Tensor):
+        seq_length = seq_length.squeeze()
+
+        # build feature map
+        feature_input = self.get_feature_input(batch)
+        feature_input = self.dropout(feature_input)
+
+        # sequence encoder
+        feature_input = nn.utils.rnn.pack_padded_sequence(feature_input,
+                                                          seq_length,
+                                                          batch_first=True,
+                                                          enforce_sorted=False)
+        seq_out, _ = self.recurrent_encoder(feature_input)
+        seq_out, _ = nn.utils.rnn.pad_packed_sequence(seq_out,
+                                                      batch_first=True)
+
+        # reconcile encoder output size with city embedding size
+        if self.city_embedding_size != self.hidden_size:
+            seq_out = self.linear_to_city(seq_out)
+
+        # create final predictions (no softmax)
+        city_encoding = self.dropout(seq_out)
+        dense_out = self.dense(city_encoding)
+        return dense_out
+
+    def get_feature_input(self, batch: BatchType):
+        if self.feature_combination_type == FeatureProjectionType.CONCATENATION:
+            return self.feature_concatenation(batch)
+        else:
+            return self.feature_multiplication(batch)
+
+    def feature_concatenation(self, batch: BatchType):
+        &#34;&#34;&#34;
+        Enables feature concatenation for every sequential step.
+        &#34;&#34;&#34;
+        feature_list = [self.embedding_layers[k.replace(&#34;next_&#34;, &#34;&#34;)](batch[k]) for k in self.features_embedding]
+        return torch.cat(feature_list, axis=2)
+
+    def feature_multiplication(self, batch: BatchType):
+        &#34;&#34;&#34;
+        Enables feature multiplication for every sequential step.
+        &#34;&#34;&#34;
+        attention_embs = [self.attn_weights[k] * self.embedding_layers[k.replace(&#34;next_&#34;, &#34;&#34;)](batch[k])
+                          for k in self.features_embedding if k != &#39;city_id&#39;]
+        attention = functools.reduce(lambda a, b: a + b, attention_embs)
+        return self.embedding_layers[&#39;city_id&#39;](batch[&#39;city_id&#39;]) * attention
+
+    def get_loss(self,
+                 city_scores: torch.Tensor,
+                 batch: BatchType,
+                 seq_len: torch.Tensor,
+                 device=config.DEVICE) -&gt; torch.Tensor:
+        &#34;&#34;&#34;
+        Loss function computation for the network, depending on model type:
+
+        Args:
+            1. `ModelType.MANY_TO_ONE`: Train many to one sequential model.
+            2. `ModelType.MANY_TO_MANY`: Train many to many sequential model.
+        &#34;&#34;&#34;
+        bs, ts = batch[&#39;city_id&#39;].shape
+        loss = self.loss(city_scores, batch[&#39;next_city_id&#39;].view(-1) - 1)
+        loss = loss.view(-1, ts)
+        if self.model_type == ModelType.MANY_TO_ONE:
+            return torch.sum(loss * torch.nn.functional.one_hot(seq_len - 1).to(device)) / torch.sum(seq_len)
+        elif self.model_type == ModelType.MANY_TO_MANY:
+            if isinstance(self.cross_entropy_weights, int):
+                return torch.sum(loss) / torch.sum(seq_len)
+            else:
+                # TODO: Find a way to control for variance. Batches with less
+                #  subsequences should have a lower weight.
+                return torch.sum(self.cross_entropy_weights[:ts] * loss) / torch.sum(seq_len)
+        else:
+            logging.error(&#39;Invalid model type in get_loss().&#39;)
+
+    def get_recurrent_encoder(self,
+                              recurrent_type: RecurrentType,
+                              n_layers: int,
+                              dropout: float):
+        if recurrent_type == RecurrentType.LSTM:
+            return nn.LSTM(self.features_dim,
+                           self.hidden_size,
+                           num_layers=n_layers,
+                           dropout=dropout,
+                           batch_first=True)
+        elif recurrent_type == RecurrentType.GRU:
+            return nn.GRU(self.features_dim,
+                          self.hidden_size,
+                          num_layers=n_layers,
+                          dropout=dropout,
+                          batch_first=True)
+        else:
+            logging.error(&#39;Invalid recurrent encoder type in get_recurrent_encoder().&#39;)
+
+    def set_optimizer(self, optimizer_type: OptimizerType) -&gt; None:
+        if optimizer_type == OptimizerType.ADAMW:
+            self.optimizer = torch.optim.AdamW(
+                self.parameters(),
+                lr=0.001,
+                betas=(0.9, 0.999),
+                eps=1e-08,
+                weight_decay=0.01,
+                amsgrad=False)
+        elif optimizer_type == OptimizerType.ADAM:
+            self.optimizer = torch.optim.Adam(
+                self.parameters(),
+                lr=0.001,
+                betas=(0.9, 0.999),
+                eps=1e-08,
+                weight_decay=0,
+                amsgrad=False)
+        else:
+            logging.error(&#39;Invalid optimizer type in set_optimizer().&#39;)
+
+    def set_entropy_weights(self,
+                            train_set: pd.DataFrame):
+        &#34;&#34;&#34;
+        Set entropy weights for `ModelType.MANY_TO_MANY`. These weights
+        depend on the `WeightType` passed in the constructor.
+        &#34;&#34;&#34;
+        if self.weight_type is WeightType.UNWEIGHTED:
+            self.cross_entropy_weights = 1
+        elif self.weight_type in (WeightType.UNIFORM, WeightType.CUMSUM_CORRECTED):
+            weights_train = dict(train_set.groupby(&#39;utrip_id&#39;).size().value_counts().items())
+            weights_train = np.array([weights_train.get(k, 0) for k in range(1, 50)])
+            numerator = 1 if self.weight_type == WeightType.UNIFORM else weights_train
+            reweighting = numerator / np.cumsum(weights_train[::-1])[::-1]
+
+            if np.any(np.isnan(reweighting)):
+                logging.warning(&#39;Warning: NaN found in weights.&#39;)
+
+            reweighting[np.isnan(reweighting)] = 0
+            reweighting[np.isinf(reweighting)] = 0
+            self.cross_entropy_weights = torch.tensor(reweighting, device=DEVICE)
+        else:
+            logging.error(f&#34;Unknown weight type {self.weight_type} in set_entropy_weights()&#34;)
+
+        logging.info(f&#39;Weights: {self.cross_entropy_weights}&#39;)
+
+    def initialize_parameters(self):
+        &#34;&#34;&#34;
+        Network parameter initialization. Ended up using the default one.
+        &#34;&#34;&#34;
+        # https://pytorch.org/docs/stable/nn.init.html
+        for name, param in self.named_parameters():
+            if len(param.shape) &gt; 1:
+                logging.info(f&#34;Initializing {name}&#34;)
+                nn.init.xavier_uniform_(param)
+
+    def __str__(self):
+        return json.dumps(self.model_params, indent=4, sort_keys=True)
+
+    @property
+    def hash(self):
+        &#34;&#34;&#34;
+        Unique model hash for checkpoint/metrics identification.
+        &#34;&#34;&#34;
+        return hashlib.md5(self.__str__().encode(&#39;utf-8&#39;)).hexdigest()[:8]
+
+
+def get_model_predictions(model: BookingNet,
+                          data_loader: DataLoader,
+                          model_ckpt_path: str) -&gt; Iterator[torch.FloatTensor]:
+    &#34;&#34;&#34;
+    Get model predictions model checkpoint and batches data loader.
+    &#34;&#34;&#34;
+    model.load_state_dict(
+        torch.load(model_ckpt_path,
+                   map_location=torch.device(DEVICE))
+    )
+    model.eval()
+    with torch.no_grad():
+        for batch, seq_len in data_loader:
+            if DEVICE == &#39;cuda&#39;:
+                batch = {k: v.cuda(non_blocking=True) for k, v in batch.items()}
+
+            city_scores = model(batch, seq_len)
+            city_scores = torch.bmm(
+                torch.nn.functional.one_hot(seq_len - 1).unsqueeze(dim=1).type(torch.FloatTensor).to(DEVICE),
+                city_scores).squeeze()
+            city_scores = nn.Softmax(dim=1)(city_scores)
+            yield city_scores.cpu()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="recsys.model.get_model_predictions"><code class="name flex">
+<span>def <span class="ident">get_model_predictions</span></span>(<span>model: <a title="recsys.model.BookingNet" href="#recsys.model.BookingNet">BookingNet</a>, data_loader: torch.utils.data.dataloader.DataLoader, model_ckpt_path: str) ‑> Iterator[torch.FloatTensor]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get model predictions model checkpoint and batches data loader.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/model.py#L277-L298" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def get_model_predictions(model: BookingNet,
+                          data_loader: DataLoader,
+                          model_ckpt_path: str) -&gt; Iterator[torch.FloatTensor]:
+    &#34;&#34;&#34;
+    Get model predictions model checkpoint and batches data loader.
+    &#34;&#34;&#34;
+    model.load_state_dict(
+        torch.load(model_ckpt_path,
+                   map_location=torch.device(DEVICE))
+    )
+    model.eval()
+    with torch.no_grad():
+        for batch, seq_len in data_loader:
+            if DEVICE == &#39;cuda&#39;:
+                batch = {k: v.cuda(non_blocking=True) for k, v in batch.items()}
+
+            city_scores = model(batch, seq_len)
+            city_scores = torch.bmm(
+                torch.nn.functional.one_hot(seq_len - 1).unsqueeze(dim=1).type(torch.FloatTensor).to(DEVICE),
+                city_scores).squeeze()
+            city_scores = nn.Softmax(dim=1)(city_scores)
+            yield city_scores.cpu()</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="recsys.model.BookingNet"><code class="flex name class">
+<span>class <span class="ident">BookingNet</span></span>
+<span>(</span><span>features_embedding: List[str], hidden_size: int, output_size: int, embedding_sizes: Dict[str, Tuple[int, int]], n_layers: int = 2, dropout: float = 0.3, rnn_dropout: float = 0.1, tie_embedding_and_projection: bool = True, model_type: <a title="recsys.types.ModelType" href="types.html#recsys.types.ModelType">ModelType</a> = ModelType.MANY_TO_MANY, recurrent_type: <a title="recsys.types.RecurrentType" href="types.html#recsys.types.RecurrentType">RecurrentType</a> = RecurrentType.GRU, weight_type: <a title="recsys.types.WeightType" href="types.html#recsys.types.WeightType">WeightType</a> = WeightType.UNWEIGHTED, feature_projection_type: <a title="recsys.types.FeatureProjectionType" href="types.html#recsys.types.FeatureProjectionType">FeatureProjectionType</a> = FeatureProjectionType.CONCATENATION, **kwargs: List)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>BookingNet Sequence Aware Recommender System Network</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>features_embedding</code></strong></dt>
+<dd>Features to embed at each time step.</dd>
+<dt><strong><code>hidden_size</code></strong></dt>
+<dd>Hidden size of the recurrent encoder (<code>LSTM</code> or <code>GRU</code>).</dd>
+<dt><strong><code>output_size</code></strong></dt>
+<dd>Quantity of cities to predict.</dd>
+<dt><strong><code>embedding_sizes</code></strong></dt>
+<dd>Sizes of each feature embedding.</dd>
+<dt><strong><code>n_layers</code></strong></dt>
+<dd>Number of recurrent layers.</dd>
+<dt><strong><code>dropout</code></strong></dt>
+<dd>Dropout used in our input layer.</dd>
+<dt><strong><code>rnn_dropout</code></strong></dt>
+<dd>Dropout used in recurrent layer.</dd>
+<dt><strong><code>recurrent_type</code></strong></dt>
+<dd>Select between <code>RecurrentType.GRU</code> or <code>RecurrentType.LSTM</code></dd>
+<dt><strong><code>tie_embedding_and_projection</code></strong></dt>
+<dd>If <code>true</code>, parameterize last linear layer with embedding matrix.</dd>
+<dt><strong><code>feature_projection_type</code></strong></dt>
+<dd>Select between <code>FeatureCombinationType.CONCATENATION</code>
+or <code>FeatureCombinationType.MULTIPLICATION</code></dd>
+<dt><strong><code>model_type</code></strong></dt>
+<dd>The model can either only predict the last city (<code>ModelType.MANY_TO_ONE</code>) or
+predict every city in the sequence (<code>ModelType.MANY_TO_MANY</code>)</dd>
+</dl>
+<p>weight_type:
+1. <code>WeightType.UNWEIGHTED</code>: Unweighted cross entropy.
+2. <code>WeightType.UNIFORM</code>: Uniform cross entropy.
+3. <code>WeightType.CUMSUM_CORRECTED</code>: Cross entropy corrected to reflect original
+one to many weighting.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/model.py#L19-L274" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class BookingNet(nn.Module):
+    &#34;&#34;&#34;
+    BookingNet Sequence Aware Recommender System Network
+    &#34;&#34;&#34;
+
+    def __init__(self,
+                 features_embedding: List[str],
+                 hidden_size: int,
+                 output_size: int,
+                 embedding_sizes: Dict[str, Tuple[int, int]],
+                 n_layers: int = 2,
+                 dropout: float = 0.3,
+                 rnn_dropout: float = 0.1,
+                 tie_embedding_and_projection: bool = True,
+                 model_type: ModelType = ModelType.MANY_TO_MANY,
+                 recurrent_type: RecurrentType = RecurrentType.GRU,
+                 weight_type: WeightType = WeightType.UNWEIGHTED,
+                 feature_projection_type: FeatureProjectionType = FeatureProjectionType.CONCATENATION,
+                 **kwargs: List):
+        &#34;&#34;&#34;
+        Args:
+             features_embedding: Features to embed at each time step.
+             hidden_size: Hidden size of the recurrent encoder (`LSTM` or `GRU`).
+             output_size: Quantity of cities to predict.
+             embedding_sizes: Sizes of each feature embedding.
+             n_layers: Number of recurrent layers.
+             dropout: Dropout used in our input layer.
+             rnn_dropout: Dropout used in recurrent layer.
+             recurrent_type: Select between `RecurrentType.GRU` or `RecurrentType.LSTM`
+             tie_embedding_and_projection: If `true`, parameterize last linear layer with embedding matrix.
+             feature_projection_type: Select between `FeatureCombinationType.CONCATENATION`
+                or `FeatureCombinationType.MULTIPLICATION`
+             model_type: The model can either only predict the last city (`ModelType.MANY_TO_ONE`) or
+                predict every city in the sequence (`ModelType.MANY_TO_MANY`)
+             weight_type:
+                1. `WeightType.UNWEIGHTED`: Unweighted cross entropy.
+                2. `WeightType.UNIFORM`: Uniform cross entropy.
+                3. `WeightType.CUMSUM_CORRECTED`: Cross entropy corrected to reflect original
+                    one to many weighting.
+        &#34;&#34;&#34;
+        super().__init__()
+        # save model arguments to re-initialize later
+        model_params = inspect.getargvalues(inspect.currentframe()).locals
+        if &#39;kwargs&#39; in model_params:
+            model_params.update(model_params[&#39;kwargs&#39;])
+            model_params.pop(&#39;kwargs&#39;)
+        model_params.pop(&#39;__class__&#39;)
+        model_params.pop(&#39;self&#39;)
+        self.model_params = model_params
+
+        self.features_embedding = features_embedding
+        self.hidden_size = hidden_size
+        self.target_variable = &#34;next_city_id&#34;
+        self.embedding_layers = nn.ModuleDict(
+            {key: nn.Embedding(num_embeddings=int(qty_embeddings) + 1,  # reserve 0 index for padding/OOV.
+                               embedding_dim=int(size_embeddings),
+                               max_norm=None,  # Failed experiment, enforcing spherical embeddings degraded performance.
+                               norm_type=2,
+                               padding_idx=0)
+             for key, (qty_embeddings, size_embeddings) in embedding_sizes.items()})
+
+        # encode every variable with the prefix `next_` to the embedding matrix of the suffix.
+        self.features_dim = int(np.sum([embedding_sizes[k.replace(&#34;next_&#34;, &#34;&#34;)][1]
+                                        for k in self.features_embedding]))
+        self.city_embedding_size = embedding_sizes[&#39;city_id&#39;][1]
+
+        self.feature_combination_type = feature_projection_type
+        self.tie_embedding_and_projection = tie_embedding_and_projection
+        self.recurrent_encoder = self.get_recurrent_encoder(recurrent_type, n_layers, rnn_dropout)
+
+        if feature_projection_type == FeatureProjectionType.MULTIPLICATION:
+            self.attn_weights = nn.ParameterDict(
+                {key: nn.Parameter(torch.rand(1)) for key in self.features_embedding}
+            )
+
+        if self.city_embedding_size != self.hidden_size:
+            logging.info(
+                f&#34;Warning: Using linear layer to reconcile output of size &#34;
+                f&#34;{self.hidden_size} with city embedding of size {self.city_embedding_size}.&#34;)
+            self.linear_to_city = nn.Linear(self.hidden_size,
+                                            self.city_embedding_size,
+                                            bias=False)
+
+        self.dropout = nn.Dropout(dropout)
+        self.dense = nn.Linear(self.city_embedding_size, output_size, bias=False)
+
+        if self.tie_embedding_and_projection:
+            # ignore first embedding, since it corresponds to padding/OOV
+            self.dense.weight = nn.Parameter(self.embedding_layers[&#39;city_id&#39;].weight[1:])
+
+        # self.initialize_parameters()
+
+        # other parameters
+        self.loss = nn.CrossEntropyLoss(ignore_index=-1, reduction=&#39;none&#39;)
+        self.model_type = model_type
+        self.weight_type = weight_type
+        self.optimizer = None
+        self.cross_entropy_weights = None
+
+    def forward(self, batch: BatchType, seq_length: torch.Tensor):
+        seq_length = seq_length.squeeze()
+
+        # build feature map
+        feature_input = self.get_feature_input(batch)
+        feature_input = self.dropout(feature_input)
+
+        # sequence encoder
+        feature_input = nn.utils.rnn.pack_padded_sequence(feature_input,
+                                                          seq_length,
+                                                          batch_first=True,
+                                                          enforce_sorted=False)
+        seq_out, _ = self.recurrent_encoder(feature_input)
+        seq_out, _ = nn.utils.rnn.pad_packed_sequence(seq_out,
+                                                      batch_first=True)
+
+        # reconcile encoder output size with city embedding size
+        if self.city_embedding_size != self.hidden_size:
+            seq_out = self.linear_to_city(seq_out)
+
+        # create final predictions (no softmax)
+        city_encoding = self.dropout(seq_out)
+        dense_out = self.dense(city_encoding)
+        return dense_out
+
+    def get_feature_input(self, batch: BatchType):
+        if self.feature_combination_type == FeatureProjectionType.CONCATENATION:
+            return self.feature_concatenation(batch)
+        else:
+            return self.feature_multiplication(batch)
+
+    def feature_concatenation(self, batch: BatchType):
+        &#34;&#34;&#34;
+        Enables feature concatenation for every sequential step.
+        &#34;&#34;&#34;
+        feature_list = [self.embedding_layers[k.replace(&#34;next_&#34;, &#34;&#34;)](batch[k]) for k in self.features_embedding]
+        return torch.cat(feature_list, axis=2)
+
+    def feature_multiplication(self, batch: BatchType):
+        &#34;&#34;&#34;
+        Enables feature multiplication for every sequential step.
+        &#34;&#34;&#34;
+        attention_embs = [self.attn_weights[k] * self.embedding_layers[k.replace(&#34;next_&#34;, &#34;&#34;)](batch[k])
+                          for k in self.features_embedding if k != &#39;city_id&#39;]
+        attention = functools.reduce(lambda a, b: a + b, attention_embs)
+        return self.embedding_layers[&#39;city_id&#39;](batch[&#39;city_id&#39;]) * attention
+
+    def get_loss(self,
+                 city_scores: torch.Tensor,
+                 batch: BatchType,
+                 seq_len: torch.Tensor,
+                 device=config.DEVICE) -&gt; torch.Tensor:
+        &#34;&#34;&#34;
+        Loss function computation for the network, depending on model type:
+
+        Args:
+            1. `ModelType.MANY_TO_ONE`: Train many to one sequential model.
+            2. `ModelType.MANY_TO_MANY`: Train many to many sequential model.
+        &#34;&#34;&#34;
+        bs, ts = batch[&#39;city_id&#39;].shape
+        loss = self.loss(city_scores, batch[&#39;next_city_id&#39;].view(-1) - 1)
+        loss = loss.view(-1, ts)
+        if self.model_type == ModelType.MANY_TO_ONE:
+            return torch.sum(loss * torch.nn.functional.one_hot(seq_len - 1).to(device)) / torch.sum(seq_len)
+        elif self.model_type == ModelType.MANY_TO_MANY:
+            if isinstance(self.cross_entropy_weights, int):
+                return torch.sum(loss) / torch.sum(seq_len)
+            else:
+                # TODO: Find a way to control for variance. Batches with less
+                #  subsequences should have a lower weight.
+                return torch.sum(self.cross_entropy_weights[:ts] * loss) / torch.sum(seq_len)
+        else:
+            logging.error(&#39;Invalid model type in get_loss().&#39;)
+
+    def get_recurrent_encoder(self,
+                              recurrent_type: RecurrentType,
+                              n_layers: int,
+                              dropout: float):
+        if recurrent_type == RecurrentType.LSTM:
+            return nn.LSTM(self.features_dim,
+                           self.hidden_size,
+                           num_layers=n_layers,
+                           dropout=dropout,
+                           batch_first=True)
+        elif recurrent_type == RecurrentType.GRU:
+            return nn.GRU(self.features_dim,
+                          self.hidden_size,
+                          num_layers=n_layers,
+                          dropout=dropout,
+                          batch_first=True)
+        else:
+            logging.error(&#39;Invalid recurrent encoder type in get_recurrent_encoder().&#39;)
+
+    def set_optimizer(self, optimizer_type: OptimizerType) -&gt; None:
+        if optimizer_type == OptimizerType.ADAMW:
+            self.optimizer = torch.optim.AdamW(
+                self.parameters(),
+                lr=0.001,
+                betas=(0.9, 0.999),
+                eps=1e-08,
+                weight_decay=0.01,
+                amsgrad=False)
+        elif optimizer_type == OptimizerType.ADAM:
+            self.optimizer = torch.optim.Adam(
+                self.parameters(),
+                lr=0.001,
+                betas=(0.9, 0.999),
+                eps=1e-08,
+                weight_decay=0,
+                amsgrad=False)
+        else:
+            logging.error(&#39;Invalid optimizer type in set_optimizer().&#39;)
+
+    def set_entropy_weights(self,
+                            train_set: pd.DataFrame):
+        &#34;&#34;&#34;
+        Set entropy weights for `ModelType.MANY_TO_MANY`. These weights
+        depend on the `WeightType` passed in the constructor.
+        &#34;&#34;&#34;
+        if self.weight_type is WeightType.UNWEIGHTED:
+            self.cross_entropy_weights = 1
+        elif self.weight_type in (WeightType.UNIFORM, WeightType.CUMSUM_CORRECTED):
+            weights_train = dict(train_set.groupby(&#39;utrip_id&#39;).size().value_counts().items())
+            weights_train = np.array([weights_train.get(k, 0) for k in range(1, 50)])
+            numerator = 1 if self.weight_type == WeightType.UNIFORM else weights_train
+            reweighting = numerator / np.cumsum(weights_train[::-1])[::-1]
+
+            if np.any(np.isnan(reweighting)):
+                logging.warning(&#39;Warning: NaN found in weights.&#39;)
+
+            reweighting[np.isnan(reweighting)] = 0
+            reweighting[np.isinf(reweighting)] = 0
+            self.cross_entropy_weights = torch.tensor(reweighting, device=DEVICE)
+        else:
+            logging.error(f&#34;Unknown weight type {self.weight_type} in set_entropy_weights()&#34;)
+
+        logging.info(f&#39;Weights: {self.cross_entropy_weights}&#39;)
+
+    def initialize_parameters(self):
+        &#34;&#34;&#34;
+        Network parameter initialization. Ended up using the default one.
+        &#34;&#34;&#34;
+        # https://pytorch.org/docs/stable/nn.init.html
+        for name, param in self.named_parameters():
+            if len(param.shape) &gt; 1:
+                logging.info(f&#34;Initializing {name}&#34;)
+                nn.init.xavier_uniform_(param)
+
+    def __str__(self):
+        return json.dumps(self.model_params, indent=4, sort_keys=True)
+
+    @property
+    def hash(self):
+        &#34;&#34;&#34;
+        Unique model hash for checkpoint/metrics identification.
+        &#34;&#34;&#34;
+        return hashlib.md5(self.__str__().encode(&#39;utf-8&#39;)).hexdigest()[:8]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>torch.nn.modules.module.Module</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="recsys.model.BookingNet.dump_patches"><code class="name">var <span class="ident">dump_patches</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="recsys.model.BookingNet.training"><code class="name">var <span class="ident">training</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="recsys.model.BookingNet.hash"><code class="name">var <span class="ident">hash</span></code></dt>
+<dd>
+<div class="desc"><p>Unique model hash for checkpoint/metrics identification.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/model.py#L269-L274" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@property
+def hash(self):
+    &#34;&#34;&#34;
+    Unique model hash for checkpoint/metrics identification.
+    &#34;&#34;&#34;
+    return hashlib.md5(self.__str__().encode(&#39;utf-8&#39;)).hexdigest()[:8]</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="recsys.model.BookingNet.feature_concatenation"><code class="name flex">
+<span>def <span class="ident">feature_concatenation</span></span>(<span>self, batch: Dict[str, torch.Tensor])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Enables feature concatenation for every sequential step.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/model.py#L149-L154" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def feature_concatenation(self, batch: BatchType):
+    &#34;&#34;&#34;
+    Enables feature concatenation for every sequential step.
+    &#34;&#34;&#34;
+    feature_list = [self.embedding_layers[k.replace(&#34;next_&#34;, &#34;&#34;)](batch[k]) for k in self.features_embedding]
+    return torch.cat(feature_list, axis=2)</code></pre>
+</details>
+</dd>
+<dt id="recsys.model.BookingNet.feature_multiplication"><code class="name flex">
+<span>def <span class="ident">feature_multiplication</span></span>(<span>self, batch: Dict[str, torch.Tensor])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Enables feature multiplication for every sequential step.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/model.py#L156-L163" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def feature_multiplication(self, batch: BatchType):
+    &#34;&#34;&#34;
+    Enables feature multiplication for every sequential step.
+    &#34;&#34;&#34;
+    attention_embs = [self.attn_weights[k] * self.embedding_layers[k.replace(&#34;next_&#34;, &#34;&#34;)](batch[k])
+                      for k in self.features_embedding if k != &#39;city_id&#39;]
+    attention = functools.reduce(lambda a, b: a + b, attention_embs)
+    return self.embedding_layers[&#39;city_id&#39;](batch[&#39;city_id&#39;]) * attention</code></pre>
+</details>
+</dd>
+<dt id="recsys.model.BookingNet.forward"><code class="name flex">
+<span>def <span class="ident">forward</span></span>(<span>self, batch: Dict[str, torch.Tensor], seq_length: torch.Tensor) ‑> Callable[..., Any]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the :class:<code>Module</code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/model.py#L118-L141" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def forward(self, batch: BatchType, seq_length: torch.Tensor):
+    seq_length = seq_length.squeeze()
+
+    # build feature map
+    feature_input = self.get_feature_input(batch)
+    feature_input = self.dropout(feature_input)
+
+    # sequence encoder
+    feature_input = nn.utils.rnn.pack_padded_sequence(feature_input,
+                                                      seq_length,
+                                                      batch_first=True,
+                                                      enforce_sorted=False)
+    seq_out, _ = self.recurrent_encoder(feature_input)
+    seq_out, _ = nn.utils.rnn.pad_packed_sequence(seq_out,
+                                                  batch_first=True)
+
+    # reconcile encoder output size with city embedding size
+    if self.city_embedding_size != self.hidden_size:
+        seq_out = self.linear_to_city(seq_out)
+
+    # create final predictions (no softmax)
+    city_encoding = self.dropout(seq_out)
+    dense_out = self.dense(city_encoding)
+    return dense_out</code></pre>
+</details>
+</dd>
+<dt id="recsys.model.BookingNet.get_feature_input"><code class="name flex">
+<span>def <span class="ident">get_feature_input</span></span>(<span>self, batch: Dict[str, torch.Tensor])</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/model.py#L143-L147" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def get_feature_input(self, batch: BatchType):
+    if self.feature_combination_type == FeatureProjectionType.CONCATENATION:
+        return self.feature_concatenation(batch)
+    else:
+        return self.feature_multiplication(batch)</code></pre>
+</details>
+</dd>
+<dt id="recsys.model.BookingNet.get_loss"><code class="name flex">
+<span>def <span class="ident">get_loss</span></span>(<span>self, city_scores: torch.Tensor, batch: Dict[str, torch.Tensor], seq_len: torch.Tensor, device='cpu') ‑> torch.Tensor</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loss function computation for the network, depending on model type:</p>
+<h2 id="args">Args</h2>
+<ol>
+<li><code>ModelType.MANY_TO_ONE</code>: Train many to one sequential model.</li>
+<li><code>ModelType.MANY_TO_MANY</code>: Train many to many sequential model.</li>
+</ol></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/model.py#L165-L190" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def get_loss(self,
+             city_scores: torch.Tensor,
+             batch: BatchType,
+             seq_len: torch.Tensor,
+             device=config.DEVICE) -&gt; torch.Tensor:
+    &#34;&#34;&#34;
+    Loss function computation for the network, depending on model type:
+
+    Args:
+        1. `ModelType.MANY_TO_ONE`: Train many to one sequential model.
+        2. `ModelType.MANY_TO_MANY`: Train many to many sequential model.
+    &#34;&#34;&#34;
+    bs, ts = batch[&#39;city_id&#39;].shape
+    loss = self.loss(city_scores, batch[&#39;next_city_id&#39;].view(-1) - 1)
+    loss = loss.view(-1, ts)
+    if self.model_type == ModelType.MANY_TO_ONE:
+        return torch.sum(loss * torch.nn.functional.one_hot(seq_len - 1).to(device)) / torch.sum(seq_len)
+    elif self.model_type == ModelType.MANY_TO_MANY:
+        if isinstance(self.cross_entropy_weights, int):
+            return torch.sum(loss) / torch.sum(seq_len)
+        else:
+            # TODO: Find a way to control for variance. Batches with less
+            #  subsequences should have a lower weight.
+            return torch.sum(self.cross_entropy_weights[:ts] * loss) / torch.sum(seq_len)
+    else:
+        logging.error(&#39;Invalid model type in get_loss().&#39;)</code></pre>
+</details>
+</dd>
+<dt id="recsys.model.BookingNet.get_recurrent_encoder"><code class="name flex">
+<span>def <span class="ident">get_recurrent_encoder</span></span>(<span>self, recurrent_type: <a title="recsys.types.RecurrentType" href="types.html#recsys.types.RecurrentType">RecurrentType</a>, n_layers: int, dropout: float)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/model.py#L192-L209" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def get_recurrent_encoder(self,
+                          recurrent_type: RecurrentType,
+                          n_layers: int,
+                          dropout: float):
+    if recurrent_type == RecurrentType.LSTM:
+        return nn.LSTM(self.features_dim,
+                       self.hidden_size,
+                       num_layers=n_layers,
+                       dropout=dropout,
+                       batch_first=True)
+    elif recurrent_type == RecurrentType.GRU:
+        return nn.GRU(self.features_dim,
+                      self.hidden_size,
+                      num_layers=n_layers,
+                      dropout=dropout,
+                      batch_first=True)
+    else:
+        logging.error(&#39;Invalid recurrent encoder type in get_recurrent_encoder().&#39;)</code></pre>
+</details>
+</dd>
+<dt id="recsys.model.BookingNet.initialize_parameters"><code class="name flex">
+<span>def <span class="ident">initialize_parameters</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Network parameter initialization. Ended up using the default one.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/model.py#L256-L264" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def initialize_parameters(self):
+    &#34;&#34;&#34;
+    Network parameter initialization. Ended up using the default one.
+    &#34;&#34;&#34;
+    # https://pytorch.org/docs/stable/nn.init.html
+    for name, param in self.named_parameters():
+        if len(param.shape) &gt; 1:
+            logging.info(f&#34;Initializing {name}&#34;)
+            nn.init.xavier_uniform_(param)</code></pre>
+</details>
+</dd>
+<dt id="recsys.model.BookingNet.set_entropy_weights"><code class="name flex">
+<span>def <span class="ident">set_entropy_weights</span></span>(<span>self, train_set: pandas.core.frame.DataFrame)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set entropy weights for <code>ModelType.MANY_TO_MANY</code>. These weights
+depend on the <code>WeightType</code> passed in the constructor.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/model.py#L231-L254" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def set_entropy_weights(self,
+                        train_set: pd.DataFrame):
+    &#34;&#34;&#34;
+    Set entropy weights for `ModelType.MANY_TO_MANY`. These weights
+    depend on the `WeightType` passed in the constructor.
+    &#34;&#34;&#34;
+    if self.weight_type is WeightType.UNWEIGHTED:
+        self.cross_entropy_weights = 1
+    elif self.weight_type in (WeightType.UNIFORM, WeightType.CUMSUM_CORRECTED):
+        weights_train = dict(train_set.groupby(&#39;utrip_id&#39;).size().value_counts().items())
+        weights_train = np.array([weights_train.get(k, 0) for k in range(1, 50)])
+        numerator = 1 if self.weight_type == WeightType.UNIFORM else weights_train
+        reweighting = numerator / np.cumsum(weights_train[::-1])[::-1]
+
+        if np.any(np.isnan(reweighting)):
+            logging.warning(&#39;Warning: NaN found in weights.&#39;)
+
+        reweighting[np.isnan(reweighting)] = 0
+        reweighting[np.isinf(reweighting)] = 0
+        self.cross_entropy_weights = torch.tensor(reweighting, device=DEVICE)
+    else:
+        logging.error(f&#34;Unknown weight type {self.weight_type} in set_entropy_weights()&#34;)
+
+    logging.info(f&#39;Weights: {self.cross_entropy_weights}&#39;)</code></pre>
+</details>
+</dd>
+<dt id="recsys.model.BookingNet.set_optimizer"><code class="name flex">
+<span>def <span class="ident">set_optimizer</span></span>(<span>self, optimizer_type: <a title="recsys.types.OptimizerType" href="types.html#recsys.types.OptimizerType">OptimizerType</a>) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/mbaigorria/booking-challenge-2021-recsys/blob/72d9382485ebfd6da4c12d4da628e072acc8a9bf/recsys/model.py#L211-L229" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def set_optimizer(self, optimizer_type: OptimizerType) -&gt; None:
+    if optimizer_type == OptimizerType.ADAMW:
+        self.optimizer = torch.optim.AdamW(
+            self.parameters(),
+            lr=0.001,
+            betas=(0.9, 0.999),
+            eps=1e-08,
+            weight_decay=0.01,
+            amsgrad=False)
+    elif optimizer_type == OptimizerType.ADAM:
+        self.optimizer = torch.optim.Adam(
+            self.parameters(),
+            lr=0.001,
+            betas=(0.9, 0.999),
+            eps=1e-08,
+            weight_decay=0,
+            amsgrad=False)
+    else:
+        logging.error(&#39;Invalid optimizer type in set_optimizer().&#39;)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="recsys" href="index.html">recsys</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="recsys.model.get_model_predictions" href="#recsys.model.get_model_predictions">get_model_predictions</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="recsys.model.BookingNet" href="#recsys.model.BookingNet">BookingNet</a></code></h4>
+<ul class="">
+<li><code><a title="recsys.model.BookingNet.dump_patches" href="#recsys.model.BookingNet.dump_patches">dump_patches</a></code></li>
+<li><code><a title="recsys.model.BookingNet.feature_concatenation" href="#recsys.model.BookingNet.feature_concatenation">feature_concatenation</a></code></li>
+<li><code><a title="recsys.model.BookingNet.feature_multiplication" href="#recsys.model.BookingNet.feature_multiplication">feature_multiplication</a></code></li>
+<li><code><a title="recsys.model.BookingNet.forward" href="#recsys.model.BookingNet.forward">forward</a></code></li>
+<li><code><a title="recsys.model.BookingNet.get_feature_input" href="#recsys.model.BookingNet.get_feature_input">get_feature_input</a></code></li>
+<li><code><a title="recsys.model.BookingNet.get_loss" href="#recsys.model.BookingNet.get_loss">get_loss</a></code></li>
+<li><code><a title="recsys.model.BookingNet.get_recurrent_encoder" href="#recsys.model.BookingNet.get_recurrent_encoder">get_recurrent_encoder</a></code></li>
+<li><code><a title="recsys.model.BookingNet.hash" href="#recsys.model.BookingNet.hash">hash</a></code></li>
+<li><code><a title="recsys.model.BookingNet.initialize_parameters" href="#recsys.model.BookingNet.initialize_parameters">initialize_parameters</a></code></li>
+<li><code><a title="recsys.model.BookingNet.set_entropy_weights" href="#recsys.model.BookingNet.set_entropy_weights">set_entropy_weights</a></code></li>
+<li><code><a title="recsys.model.BookingNet.set_optimizer" href="#recsys.model.BookingNet.set_optimizer">set_optimizer</a></code></li>
+<li><code><a title="recsys.model.BookingNet.training" href="#recsys.model.BookingNet.training">training</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
